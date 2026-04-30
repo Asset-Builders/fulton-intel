@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and local builds
+*.log
+.cache/
+
+# Manual intake working files (keep folder, ignore content while local-testing)
+# scrapers/manual_intake/*.csv  ← uncomment to keep CSVs out of git
