@@ -28,6 +28,16 @@ jobs:
           pip install -r scrapers/requirements.txt
 
       - name: Run scrapers
+        env:
+          FULTON_GIS_ENABLED: ${{ vars.FULTON_GIS_ENABLED }}
+          FULTON_GIS_MAX: ${{ vars.FULTON_GIS_MAX }}
+          FULTON_SHERIFF_ENABLED: ${{ vars.FULTON_SHERIFF_ENABLED }}
+          FULTON_SHERIFF_PDF_URL: ${{ vars.FULTON_SHERIFF_PDF_URL }}
+          FULTON_LEGAL_ENABLED: ${{ vars.FULTON_LEGAL_ENABLED }}
+          FULTON_ACCELA_ENABLED: ${{ vars.FULTON_ACCELA_ENABLED }}
+          FULTON_GSCCCA_ENABLED: ${{ vars.FULTON_GSCCCA_ENABLED }}
+          GSCCCA_USERNAME: ${{ secrets.GSCCCA_USERNAME }}
+          GSCCCA_PASSWORD: ${{ secrets.GSCCCA_PASSWORD }}
         run: |
           cd scrapers
           python run_all.py
